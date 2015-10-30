@@ -129,5 +129,9 @@
     &:checked  + .cs-btn-secondary
       @extend %btn-secondary-active
 
+    + [class*="cs-btn"]:nth-child(2)
+      border-top-left-radius: $defaultRadius !important
+      border-bottom-left-radius: $defaultRadius !important
+
 
 
