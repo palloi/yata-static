@@ -2,6 +2,7 @@
 [class*="cs-btn"]
   @include appearance(none)
   @extend %font-smoothing
+  height: $heightDefault
   cursor: pointer
   border: 1px solid $colorGray1
   padding: 6px 14px
@@ -16,6 +17,11 @@
   color: $colorBlue2
   vertical-align: middle
   font-weight: normal
+
+  &[class*="cs-ico-"]:before
+    font-size: 22px
+    position: relative
+    top: 2px
 
 
   &[class*="cs-ico-"]:empty:before
