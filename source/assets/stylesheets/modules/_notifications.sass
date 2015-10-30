@@ -1,0 +1,42 @@
+.cs-alerts-list
+  display: inline-block
+  vertical-align: middle
+
+  & :before
+    color: rgba($colorBlue2, 0.5)
+    font-size: 20px
+    margin: 0
+
+  [class*="cs-ico"]
+    margin-right: 14px
+    position: relative
+    width: 22px
+    text-align: center
+
+    &:after
+      @include size(17px)
+      line-height: 17px
+      border-radius: 50%
+      font-size: 13px
+      content: attr(data-counter)
+      position: absolute
+      font-family: arial, sans-serif
+      background: #ee0000
+      color: #fff
+      top: -10px
+      left: 10px
+      display: none
+      -webkit-font-smoothing: auto
+      -moz-osx-font-smoothing: grayscale
+
+    &[data-counter]
+      color: #fff
+
+      &:after
+        display: block
+
+    &.cs-active
+      color: #fff
+
+    span
+      display: none
