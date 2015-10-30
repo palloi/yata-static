@@ -1,0 +1,133 @@
+// Style base button
+[class*="cs-btn"]
+  @extend %font-smoothing
+  cursor: pointer
+  border: 1px solid $colorGray1
+  padding: 6px 14px
+  border-radius: $defaultRadius
+  background: #fff
+  display: inline-block
+  font-size: 15px
+  line-height: 1.42857143
+  text-decoration: none
+  text-align: center
+  white-space: normal
+  color: $colorBlue2
+  vertical-align: middle
+  font-weight: normal
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+
+  &[class*="cs-ico-"]:empty:before
+    margin: 0
+
+  // Disabled Buttons
+  &.cs-disabled,
+  &[disabled]
+    cursor: default
+    opacity: .6
+
+  + [class*="cs-btn"]
+    margin-left: 10px
+
+  &.cs-active
+    @extend %btn-active
+
+
+[class*="cs-btn-"]
+  color: #fff
+
+.cs-btn
+
+  &.cs-active
+    background: $colorGray3
+    border-color: $colorGray4
+
+// Primary button
+.cs-btn-primary
+  background: $colorBlue1
+  border-color: darken($colorBlue1, 5%)
+  color: #fff
+
+  &.cs-active
+    @extend %btn-primary-active
+
+// Secondary button
+.cs-btn-secondary
+  background: $colorBlue4
+  border-color: $colorGray2
+
+  &.cs-active
+    @extend %btn-secondary-active
+
+.cs-btn-danger
+  color: $colorDanger
+
+// Confirm button
+.cs-btn-confirm
+  background: $colorDanger
+  border-color: darken($colorDanger, 5%)
+
+
+//
+// Sizes of BTN
+//
+.cs-btn-lg
+  font-size: 16px
+  padding: 8px 30px
+
+.cs-btn-xs
+  font-size: 13px
+  padding: 4px 10px
+  line-height: 1.5
+
+
+// BTN Groups
+.cs-group-btn
+  @extend .cs-clearfix
+  position: relative
+  z-index: 3
+
+  [class*="cs-btn"]
+    @extend .cs-float-l
+    cursor: pointer
+
+    &:first-child:not(:last-child)
+      border-top-right-radius: 0
+      border-bottom-right-radius: 0
+
+    &:not(:first-child):not(:last-child):not(:last-of-type),
+    &:nth-child(2):not(:last-child):not(:last-of-type)
+      border-radius: 0
+
+    &:last-child:not(:first-child),
+    &:last-of-type:not(:first-child)
+      border-bottom-left-radius: 0
+      border-top-left-radius: 0
+
+    & +[class*="cs-btn"]
+      margin-left: -1px
+
+    &.cs-btn +[class*="cs-btn-"]:last-child
+      margin-left: 10px
+      border-top-left-radius: $defaultRadius
+      border-bottom-left-radius: $defaultRadius
+
+  input
+    @extend %hidden-element
+
+    ~ [class*="cs-btn"]
+      margin-left: -1px
+
+    &:checked  + [class*="cs-btn"]
+      @extend %btn-active
+
+    &:checked  + .cs-btn-primary
+      @extend %btn-primary-active
+
+    &:checked  + .cs-btn-secondary
+      @extend %btn-secondary-active
+
+
+

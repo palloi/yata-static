@@ -1,0 +1,89 @@
+$colors: yellow, blue, beige, gray, orange, brown, black, pink, green, red, violet
+
+//themes
+input[id="cs-themes"]
+  @extend input[id*="cs-sidebar-nav-"]
+
+  &:checked + .cs-themes
+    visibility: visible
+    opacity: 1
+
+.cs-themes
+  position: fixed
+  top: $headerHeight
+  right: 0
+  bottom: 0
+  left: $sidebarWidth
+  padding: 20px
+  background: lighten($colorBlack, 80%)
+  z-index: 1
+  overflow: auto
+  opacity: 0
+  visibility: hidden
+  @include transition(all 0.5s ease-in-out)
+
+.cs-themes-title
+  padding: 20px 0
+  font-size: 22px
+
+.cs-themes-close
+  position: absolute
+  top: 10px
+  right: 10px
+  font-size: 30px
+  cursor: pointer
+
+.cs-theme-colors
+  background: $colorWhite
+
+  input[id*="cs-theme-color-"]
+    @extend input[id*="cs-sidebar-nav-"]
+
+  label[for*="cs-theme-color"]
+    display: inline-block
+    width: 18px
+    height: 18px
+    cursor: pointer
+    border: 3px solid $colorWhite
+    border-radius: 10px
+    box-shadow: 0 0 0 0 $colorWhite
+    @include transition(all 0.3s ease-in-out)
+
+  @each $color in $colors
+    input[id*="cs-theme-color-#{$color}"]
+      + label
+        background: $color
+
+      &:checked + label
+        box-shadow: 0 0 2px 0px darken($color, 20%)
+
+.cs-themes-list
+  width: 100%
+  @include display(flex)
+  @include flex-flow(row wrap)
+  @include justify-content(space-between)
+
+  li
+    position: relative
+    width: 31%
+    margin: 15px 0 0
+
+    > a
+      display: block
+
+    img
+      display: block
+      max-width: 100%
+
+.cs-themes-actions
+  position: absolute
+  right: 5px
+  bottom: 5px
+  left: 5px
+  text-align: right
+
+  a
+    display: inline-block
+    padding: 2px 5px
+    background: $colorWhite
+    text-decoration: none

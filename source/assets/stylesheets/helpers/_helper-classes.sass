@@ -1,0 +1,52 @@
+.cs-float-l
+  float: left
+
+.cs-float-r
+  float: right
+
+.cs-float-n
+  float: none
+
+.cs-clearfix:after
+  content: ""
+  display: block
+  clear: both
+
+.cs-inline-block
+  display: inline-block
+
+.cs-inline
+  display: inline
+
+.cs-block
+  display: block
+
+.cs-center
+  display: block!important
+  margin-left: auto!important
+  margin-right: auto!important
+  float: none!important
+
+.cs-replace
+  display: block
+  border: none
+  overflow: hidden
+  text-indent: -9999px
+  word-spacing: 999px
+
+.cs-list
+  width: 100%
+  float: left
+  display: block
+  li
+    @extend .cs-list
+
+.cs-list-auto
+  @extend .cs-list
+  li
+    @extend .cs-list
+
+.cs-list-auto
+  width: auto
+  li
+    @extend .cs-list-auto

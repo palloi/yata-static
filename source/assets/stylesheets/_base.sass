@@ -1,0 +1,94 @@
+html
+  height: 100%
+
+body
+  height: 100%
+  font-family: 'Open Sans', verdana, arial, sans-serif
+
+.cs-main
+  position: absolute
+  top: $headerHeight
+  left: $sidebarWidth
+  bottom: 0
+  right: 0
+  padding: 20px
+  overflow-x: auto
+
+.cs-page
+  position: relative
+  z-index: 1
+
+.cs-site-sections
+  border: solid 1px blue
+
+.cs-section
+  border: solid 1px red
+  margin: 3px
+  padding-left: 3px
+
+  .cs-widget
+    border: 1px solid #000
+
+.cs-section:hover
+  .btn-add-section
+    visibility: visible
+    opacity: 1
+
+.btn-add-section
+  position: absolute
+  right: 0
+  bottom: 0
+  width: 50px
+  height: 50px
+  opacity: 0
+  visibility: hidden
+  z-index: 2
+  @include transition(all 0.3s ease-in-out)
+
+  button
+    margin: 0 -10px -10px 0
+    width: 30px
+    height: 30px
+    line-height: 20px
+    font-size: 20px
+    border: none
+    border-radius: 20px
+    background: #000
+    color: #fff
+    cursor: pointer
+    opacity: 0
+    @include transition(all 0.3s ease-in-out)
+
+  &:hover
+    button
+      opacity: 1
+
+.cs-line
+  border: solid 1px green
+  margin: 3px
+  padding-left: 10px
+  padding-bottom: 5px
+
+.cs-boxes
+  @include display(flex)
+
+.cs-box
+  border: solid 1px yellow
+  margin: 3px
+  padding-left: 10px
+  word-break: break-all
+  @include flex(1)
+
+.ui-sortable-handle
+  cursor: move
+
+.ui-resizable-s
+  height: 15px
+  background-color: yellow
+  width: 40px
+  left: 0
+  right: 0
+  margin: 0 auto
+
+.ui-resizable
+  min-height: inherit

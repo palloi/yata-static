@@ -1,0 +1,62 @@
+.cs-dropdown
+  display: inline-block
+  position: relative
+
+  > ul
+    position: absolute
+    top: 100%
+    left: 0
+    margin-top: -1px
+    border: solid #555
+    border-width: 1px
+    background: #fff
+    opacity: 0
+    visibility: hidden
+    white-space: nowrap
+
+    &.cs-right
+      left: auto
+      right: 0
+
+    li
+      padding: 3px 10px
+
+  &:hover
+    .cs-dropdown-selected
+      background: #fff
+      border-color: #555
+      border-bottom-color: transparent
+      position: relative
+      z-index: 1
+
+    > ul
+      visibility: visible
+      opacity: 1
+
+.cs-dropdown-selected
+  display: block
+  padding: 4px 10px
+  border: 1px solid transparent
+
+//background site
+.cs-dropdown-background
+  .cs-dropdown-selected
+    padding: 0
+    border-radius: 4px
+    overflow: hidden
+    
+    img
+      display: block
+
+  ul
+    background: #fff
+    border: 1px solid #555
+    box-shadow: 0 0 2px #555
+
+    li
+      width: 50%
+      padding: 2px
+
+      img
+        display: block
+        width: 100%

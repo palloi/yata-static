@@ -1,0 +1,35 @@
+.cs-sidebar-nav-aparencia
+  hr
+    margin: 10px 0
+
+.cs-sidebar-toggle-content
+  border: none
+  margin: 0 15px
+  padding: 10px
+
+input[id*="cs-sidebar-toggle-"]
+  @extend input[id*="cs-sidebar-nav-"]
+
+  &:checked + label
+    background: #ccc
+
+    &:after
+      content: "-"
+
+    + .cs-sidebar-toggle-content
+      display: block
+
+label[for*="cs-sidebar-toggle-"]
+  display: block
+  margin: 20px 15px 0
+  padding: 5px
+  font-size: 14px
+  border-bottom: 1px solid #000
+
+  &:after
+    content: "+"
+    float: right
+
+.cs-sidebar-toggle-content
+  display: none
+  background: #ccc

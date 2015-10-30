@@ -1,0 +1,26 @@
+%font-smoothing
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  font-smoothing: antialiased
+
+%hidden-element
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  border: 0
+
+%btn-active
+  box-shadow: inset 0 4px 5px rgba(0,0,0, .2)
+  font-weight: 700
+
+%btn-primary-active
+  background: darken($colorBlue1, 10%)
+  border-color: darken($colorBlue1, 10%)
+
+%btn-secondary-active
+  background: lighten($colorBlue4, 3%)
+  box-shadow: inset 0 4px 5px rgba(255,255,255, .2)

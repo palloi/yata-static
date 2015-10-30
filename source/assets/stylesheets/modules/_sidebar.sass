@@ -1,0 +1,57 @@
+$sidebar-nav-itens: elements, appearance, pages
+$sidebar-duration: 0s
+$sidebar-timing: ease-in-out
+
+.cs-sidebar
+  position: fixed
+  top: $headerHeight
+  left: 0
+  bottom: 0
+  width: $sidebarWidth
+  background: #fff
+  box-shadow: 1px 0 3px rgba(0,0,0,0.6)
+  z-index: 2
+
+.cs-sidebar-nav
+  border: solid #000
+  border-width: 1px 1px 0 0
+
+.cs-sidebar-nav li
+  width: 33.3%
+  float: left
+  list-style: none
+
+.cs-sidebar-nav li label
+  display: block
+  padding: 10px 5px
+  border: solid #000
+  border-width: 0 0 1px 1px
+  font-size: 12px
+
+.cs-sidebar-nav-option
+  position: absolute
+  top: 52px
+  right: 0
+  bottom: 0
+  left: 0
+  overflow-y: auto
+  opacity: 0
+  visibility: hidden
+  @include transition(all $sidebar-duration $sidebar-timing)
+
+//active nav in sidebar
+input[id*="cs-sidebar-nav-"]
+  opacity: 0
+  position: fixed
+  top: 50%
+  left: -2000px
+
+@each $sidebar-nav-item in $sidebar-nav-itens
+  input[id="cs-sidebar-nav-#{$sidebar-nav-item}"]:checked ~
+    .cs-sidebar-nav
+      label[for="cs-sidebar-nav-#{$sidebar-nav-item}"]
+        border-bottom-color: transparent
+
+    .cs-sidebar-nav-#{$sidebar-nav-item}
+      visibility: visible
+      opacity: 1

@@ -1,0 +1,81 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+@font-face{
+  font-family: 'yata';
+  src: url('fonts/icomoon.eot?-luxi4q-1');
+  src: url('fonts/icomoon.eot?#iefix-luxi4q-1') format('embedded-opentype'), 
+       url('fonts/icomoon.woff?-luxi4q-1') format('woff'),    
+       url('fonts/icomoon.ttf?-luxi4q-1') format('truetype'),    
+       url('fonts/icomoon.svg?-luxi4q-1#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class*="cs-ico"]:before{
+  font-family: 'yata';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  margin-right: 3px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$icons: (
+  arrow-down: "\e90a",
+    arrow-up: "\e91e",
+   apparence: "\e900",
+       block: "\e901",
+       pages: "\e902",
+          go: "\e903",
+        back: "\e922",
+       alert: "\e904",
+          ok: "\e905",
+       check: "\e906",
+       close: "\e907",
+        code: "\e908",
+      config: "\e909",
+   duplicate: "\e90b",
+    question: "\e90c",
+        edit: "\e90d",
+        form: "\e90e",
+     gallery: "\e90f",
+        home: "\e910",
+       image: "\e911",
+       trash: "\e912",
+        more: "\e913",
+        drag: "\e914",
+       share: "\e915",
+      arrows: "\e91b",
+  suggestion: "\e91c",
+        text: "\e91d",
+      upload: "\e91f",
+        sale: "\e920",
+       video: "\e921"
+);
+
+@each $class, $content in $icons{
+  .cs-ico-#{$class}:before{
+    content: $content;
+  }
+}
+
+
+
+// .cs-ico-seta_coluna .path1:before
+//   content: "\e916"
+
+// .cs-ico-seta_coluna .path2:before
+//   content: "\e917"
+
+// .cs-ico-seta_coluna .path3:before
+//   content: "\e918"
+
+// .cs-ico-setas_secao .path1:before
+//   content: "\e919"
+
+// .cs-ico-setas_secao .path2:before
+//   content: "\e91a"
