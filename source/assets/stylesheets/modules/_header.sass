@@ -1,12 +1,13 @@
 .cs-topbar
-  padding: 20px
+  background: #f4f4f4
+  padding: $spaceDefault 30px $spaceDefault $spaceDefault
   width: 100%
   height: $headerHeight
   position: fixed
   top: 0
   left: 0
   z-index: 10
-  background: #219af8
+
 
   a
     color: #fff
@@ -14,5 +15,20 @@
 
   .cs-logo
     float: left
-    font-size: 16px
     color: #fff
+    background: $colorBlue1
+    margin: -$spaceDefault
+    margin-right: $spaceDefault + 10
+    padding: 0 $spaceDefault
+    width: $sidebarWidth
+
+    a
+      @extend %font-smoothing
+      background: url(../images/logo.png) no-repeat 0 center
+      height: $headerHeight
+      line-height: $headerHeight
+      font-weight: 400
+      letter-spacing: -1px
+      padding-left: 65px
+      font-size: 27px
+      display: block
