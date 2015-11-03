@@ -8,29 +8,35 @@ $sidebar-timing: ease-in-out
   left: 0
   bottom: 0
   width: $sidebarWidth
-  background: #fff
+  background: $colorBlue3
   box-shadow: 1px 0 3px rgba(0,0,0,0.6)
   z-index: 2
 
-.cs-sidebar-nav
-  border: solid #000
-  border-width: 1px 1px 0 0
+  .cs-tab-label
+    color: rgba($colorWhite,0.6)
+    cursor: pointer
+    border-left: 1px solid $colorBlue3
+    background: $colorBlue2
+    width: 33.3%
+    float: left
+    text-align: center
+    text-transform: uppercase
+    font-size: 12px
+    padding: 15px 0
 
-.cs-sidebar-nav li
-  width: 33.3%
-  float: left
-  list-style: none
+    &:before
+      color: rgba($colorBlue1,0.6)
+      display: block
+      margin-bottom: 5px
+      font-size: 20px
 
-.cs-sidebar-nav li label
-  display: block
-  padding: 10px 5px
-  border: solid #000
-  border-width: 0 0 1px 1px
-  font-size: 12px
+    &:first-child
+      border-left: none
+
 
 .cs-sidebar-nav-option
   position: absolute
-  top: 52px
+  top: 78px
   right: 0
   bottom: 0
   left: 0
@@ -41,10 +47,14 @@ $sidebar-timing: ease-in-out
 
 //active nav in sidebar
 input[id*="cs-sidebar-nav-"]
-  opacity: 0
-  position: fixed
-  top: 50%
-  left: -2000px
+  @extend %hidden-element
+
+  &:checked + .cs-tab-label
+    color: $colorWhite
+    background: transparent
+
+    &:before
+      color: $colorBlue1
 
 @each $sidebar-nav-item in $sidebar-nav-itens
   input[id="cs-sidebar-nav-#{$sidebar-nav-item}"]:checked ~
