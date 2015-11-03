@@ -1,13 +1,15 @@
 .cs-dropdown
   display: inline-block
   position: relative
+  border-bottom: 10px solid transparent
 
   > ul
     position: absolute
-    top: 100%
+    top: 114%
     left: 0
     margin-top: -1px
-    border: solid #555
+    border: solid $colorGray1
+    border-radius: $defaultRadius
     border-width: 1px
     background: #fff
     opacity: 0
@@ -19,7 +21,42 @@
       right: 0
 
     li
-      padding: 3px 10px
+      border-bottom: 1px solid $colorGray1
+
+      &:last-child
+        border-bottom: none
+
+    a
+      color: $colorBlue2
+      padding: 10px 20px
+      display: block
+      font-size: 15px
+
+      &:hover,
+      &:focus
+        @extend %btn-hover
+
+
+    .cs-dropdown-featured a
+      background: $colorGray5
+
+      &:last-child
+        border-bottom-left-radius: $defaultRadius
+        border-bottom-right-radius: $defaultRadius
+
+
+  [class*="cs-btn"]
+
+    &:before
+      content: ""
+      +arrow-down(#000, 6px)
+      margin-left: 0
+      margin-top: 8px
+
+    &:focus ~ ul
+      visibility: visible
+      opacity: 1
+
 
   &:hover
     .cs-dropdown-selected
@@ -33,6 +70,10 @@
       visibility: visible
       opacity: 1
 
+  &.cs-dropdown-pos-right ul
+    left: auto
+    right: 0
+
 .cs-dropdown-selected
   display: block
   padding: 4px 10px
@@ -42,16 +83,16 @@
 .cs-dropdown-background
   .cs-dropdown-selected
     padding: 0
-    border-radius: 4px
+    border-radius: $defaultRadius
     overflow: hidden
-    
+
     img
       display: block
 
   ul
     background: #fff
-    border: 1px solid #555
-    box-shadow: 0 0 2px #555
+    border: 1px solid $colorGray1
+    box-shadow: 0 0 2px $colorGray1
 
     li
       width: 50%
