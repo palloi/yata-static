@@ -1,0 +1,28 @@
+// ARROWS
+// Creates arrow.
+// $arrow-color defines the color of the arrow.
+// $arrow-size sets the size of the arrow.
+=arrow-structure($arrow-size)
+  content: ""
+  display: inline-block
+  width: 0
+  height: 0
+  margin-left: 5px
+  position: relative
+  border: $arrow-size solid transparent
+
+=arrow-up($arrow-color, $arrow-size)
+  +arrow-structure($arrow-size)
+  border-color: transparent transparent $arrow-color transparent
+
+=arrow-down($arrow-color, $arrow-size)
+  +arrow-structure($arrow-size)
+  border-color: $arrow-color transparent transparent transparent
+
+=arrow-right($arrow-color, $arrow-size)
+  +arrow-structure($arrow-size)
+  border-color: transparent transparent transparent $arrow-color
+
+=arrow-left($arrow-color, $arrow-size)
+  +arrow-structure($arrow-size)
+  border-color: transparent $arrow-color transparent transparent
