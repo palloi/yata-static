@@ -5,7 +5,7 @@
   height: $heightDefault
   cursor: pointer
   border: 1px solid $colorGray1
-  padding: 6px 14px
+  padding: 9px 14px
   border-radius: $defaultRadius
   background: #fff
   display: inline-block
@@ -19,9 +19,13 @@
   font-weight: normal
 
   &[class*="cs-ico-"]:before
-    font-size: 22px
+    font-size: 16px
     position: relative
     top: 2px
+
+  &[class*="cs-ico-"]:empty:before
+    font-size: 22px
+    top: 0
 
 
   &[class*="cs-ico-"]:empty:before
@@ -80,9 +84,11 @@
 //
 .cs-btn-lg
   font-size: 16px
-  padding: 8px 30px
+  padding: 13px 30px
+  height: $heightDefault + 10
 
 .cs-btn-xs
+  height: $heightDefault - 10
   font-size: 13px
   padding: 4px 10px
   line-height: 1.5
