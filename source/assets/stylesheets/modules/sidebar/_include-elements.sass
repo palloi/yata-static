@@ -1,12 +1,28 @@
 .cs-widgets-group
-  padding: 10px
   overflow: visible
 
 .cs-sidebar-widget
-  width: 30%
-  height: 50px
-  margin: 5px 0
-  border: 1px solid #000
-  border-radius: 5px
+  width: calc( 33.3% - 10px)
+  padding: 15px 10px
+  height: 85px
+  margin: 0 0 10px 10px
+  border: 1px solid rgba($colorBlue1, .20)
+  background: rgba($colorBlue1, .15)
+  border-radius: $defaultRadius
   display: inline-block
-  padding: 10px
+  text-align: center
+  vertical-align: top
+  line-height: 1.2
+  font-size: 12px
+
+  &:nth-child(3n-1)
+    margin-left: 0
+
+  &:before
+    font-size: 26px
+    display: block
+    margin-bottom: 7px
+
+  &:hover
+    border: 1px solid rgba($colorBlue1, .40)
+    background: rgba($colorBlue1, .30)
