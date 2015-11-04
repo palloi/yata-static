@@ -4,32 +4,48 @@
 
 .cs-sidebar-toggle-content
   border: none
-  margin: 0 15px
-  padding: 10px
 
 input[id*="cs-sidebar-toggle-"]
   @extend input[id*="cs-sidebar-nav-"]
 
   &:checked + label
-    background: #ccc
+    border-bottom: none
+    background: $colorDark
 
     &:after
-      content: "-"
+      content: "\e91e"
 
     + .cs-sidebar-toggle-content
       display: block
+      background: $colorDark
+      @extend %border-full-sidebar
+      @extend %border-dotted
+      padding-bottom: 20px
 
 label[for*="cs-sidebar-toggle-"]
+  @extend %border-dotted
+  @extend %border-full-sidebar
   display: block
-  margin: 20px 15px 0
-  padding: 5px
+  padding-top: 15px
+  padding-bottom: 15px
   font-size: 14px
-  border-bottom: 1px solid #000
+  cursor: pointer
 
   &:after
-    content: "+"
+    content: "\e90a"
+    font-family: 'yata'
     float: right
+
+  &:first
+    border-top: 1px dotted rgba(255,255,255,.15)
+
+  &:hover
+    background: $colorDark
 
 .cs-sidebar-toggle-content
   display: none
-  background: #ccc
+
+.cd-sidebar-group
+  border-top: 1px dotted rgba(255,255,255,.15)
+  @extend %border-full-sidebar
+  margin-bottom: 40px
