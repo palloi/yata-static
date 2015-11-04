@@ -1,7 +1,17 @@
-.cs-dropdown
+[class*="cs-dropdown"]
   display: inline-block
   position: relative
   border-bottom: 10px solid transparent
+
+
+  &.cs-dropdown-secondary
+
+    [class*="cs-btn"]
+      @extend %style-dark
+      background: transparent 
+
+      &:after
+        +arrow-down(#fff, 6px)
 
   > ul
     position: absolute
@@ -47,11 +57,15 @@
 
   [class*="cs-btn"]
 
+    &:empty:after
+      margin-left: 0
+
     &:after
       content: ""
       +arrow-down(#000, 6px)
-      margin-left: 0
-      margin-top: 8px
+      margin-left: 10px
+      top: 4px
+      position: relative
 
     &:focus ~ ul
       visibility: visible
@@ -99,6 +113,9 @@
       left: -5px
       height: 66px 
       width: 86px
+
+    &:after
+      top: 0
 
   ul
     background: #fff

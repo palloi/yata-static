@@ -16,6 +16,20 @@
   &.cs-custom-select-auto
     width: auto
 
+  &.cs-custom-select-secondary
+    @extend %style-dark
+    background: none
+    text-align: right
+
+    select 
+      background: none
+      text-align: left
+      color: $colorBlue5
+
+    &:before
+      +arrow-down($colorWhite, 5px)
+      position: absolute
+
 
   &[disabled]
     border-color: $colorGray1
@@ -41,13 +55,11 @@
       background: $colorGray1
 
   &:before
+    +arrow-down($colorGray2, 5px)
     content: ""
     width: 0
     height: 0
     margin-left: 5px
-    border-style: solid
-    border-width: 5px
-    border-color: $colorGray2 transparent transparent transparent
     position: absolute
     top: 50%
     margin-top: -2px
