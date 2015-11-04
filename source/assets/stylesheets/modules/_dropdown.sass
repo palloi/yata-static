@@ -47,7 +47,7 @@
 
   [class*="cs-btn"]
 
-    &:before
+    &:after
       content: ""
       +arrow-down(#000, 6px)
       margin-left: 0
@@ -69,6 +69,7 @@
     > ul
       visibility: visible
       opacity: 1
+      z-index: 9
 
   &.cs-dropdown-pos-right ul
     left: auto
@@ -81,13 +82,23 @@
 
 //background site
 .cs-dropdown-background
-  .cs-dropdown-selected
-    padding: 0
-    border-radius: $defaultRadius
+  
+
+  [class*="cs-btn"]
+    height: 60px
+    line-height: 50px
+    text-align: right
+    position: relative
     overflow: hidden
+    width: 120px
 
     img
+      position: absolute
       display: block
+      top: -5px
+      left: -5px
+      height: 66px 
+      width: 86px
 
   ul
     background: #fff
@@ -95,6 +106,7 @@
     box-shadow: 0 0 2px $colorGray1
 
     li
+      border: none
       width: 50%
       padding: 2px
 
