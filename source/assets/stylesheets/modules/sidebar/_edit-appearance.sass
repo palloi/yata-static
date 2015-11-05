@@ -1,6 +1,6 @@
-.cs-sidebar-nav-aparencia
-  hr
-    margin: 10px 0
+.cs-sidebar-nav-appearance
+  .cs-title:first-child
+    @extend %border-dotted
 
 .cs-sidebar-toggle-content
   border: none
@@ -37,7 +37,7 @@ label[for*="cs-sidebar-toggle-"]
     float: right
 
   &:first
-    border-top: 1px dotted rgba(255,255,255,.15)
+    border-top: 1px dotted rgba($colorWhite, .15)
 
   &:hover
     background: $colorDark
@@ -46,6 +46,8 @@ label[for*="cs-sidebar-toggle-"]
   display: none
 
 .cd-sidebar-group
-  border-top: 1px dotted rgba(255,255,255,.15)
+  border-top: 1px dotted rgba($colorWhite, .15)
   @extend %border-full-sidebar
   margin-bottom: 40px
+
+
