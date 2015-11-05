@@ -40,8 +40,13 @@
   + [class*="cs-btn"]
     margin-left: 10px
 
+    &.cs-btn-center
+      margin-left: auto
+
   &.cs-active
     @extend %btn-active
+
+
 
 
 [class*="cs-btn-"]
@@ -56,6 +61,11 @@
   &:hover,
   &:focus
     @extend %btn-hover
+
+.cs-btn-center
+  display: block
+  margin: 0 auto 10px
+  width: 185px
 
 // Primary button
 .cs-btn-primary
