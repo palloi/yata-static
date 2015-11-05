@@ -1,13 +1,22 @@
-.cs-pages-list
+.cs-pages-list.ui-sortable
   border: none
-  padding: 0
-  
+  border-top: 1px dotted rgba($colorWhite, .15)
+  @extend %border-dotted
+  @extend %border-full-sidebar 
+
+
   li
     list-style: none
+    @extend %border-dotted
+    @extend %border-full-sidebar 
+
+
     a
       display: block
-      padding: 4px 10px
-      border: solid 1px #ccc
-      border-top: none
-    &:hover
-      background-color: #ccc
+      padding: 20px 0
+      color: $colorBlue5
+      text-decoration: none
+
+    &:hover,
+    &:focus 
+
