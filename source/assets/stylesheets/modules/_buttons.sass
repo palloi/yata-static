@@ -4,7 +4,7 @@
   @extend %font-smoothing
   height: $heightDefault
   cursor: pointer
-  border: 1px solid $colorGray1
+  border: none
   padding: 9px 14px
   border-radius: $defaultRadius
   background: #fff
@@ -35,7 +35,7 @@
   &.cs-disabled,
   &[disabled]
     cursor: default
-    opacity: .6
+    opacity: .15
 
   + [class*="cs-btn"]
     margin-left: 10px
@@ -50,11 +50,15 @@
 [class*="cs-btn-"]
   color: #fff
 
+.cs-btn,
+.cs-btn-danger
+  border: 1px solid $colorGray1
+
 .cs-btn
 
   &.cs-active
     background: $colorGray3
-    border-color: $colorGray4
+    // border-color: $colorGray4
 
   &:hover,
   &:focus
@@ -67,28 +71,41 @@
 
 // Primary button
 .cs-btn-primary
-  background: $colorBlue1
-  border-color: darken($colorBlue1, 5%)
+  background: $colorBase1
   color: #fff
 
   &.cs-active
     @extend %btn-primary-active
 
+  &:hover,
+  &:focus
+    background: $colorBlue1
+
 // Secondary button
 .cs-btn-secondary
-  background: $colorBlue4
-  border-color: $colorGray2
+  background: $colorBlue3
 
   &.cs-active
     @extend %btn-secondary-active
 
+  &:hover,
+  &:focus
+    background: $colorBlue2
+
 .cs-btn-danger
   color: $colorDanger
+
+  &:hover,
+  &:focus
+    color: darken($colorDanger, 25%)
 
 // Confirm button
 .cs-btn-confirm
   background: $colorDanger
-  border-color: darken($colorDanger, 5%)
+
+  &:hover,
+  &:focus
+    background: darken($colorDanger, 25%)
 
 
 //
