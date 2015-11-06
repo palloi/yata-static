@@ -13,10 +13,13 @@
   height: $heightDefault
   width: 100%
 
+  &:hover
+    @extend %btn-hover
+
   &.cs-size-small
     height: $heightSmall
 
-    select 
+    select
       font-size: 14px
       padding: 1px 30px 3px 15px
 
@@ -28,7 +31,7 @@
     background: none
     text-align: right
 
-    select 
+    select
       background: none
       text-align: left
       color: $colorBlue5
@@ -48,7 +51,7 @@
     padding: 5px 30px 5px 15px
     display: inline-block
     border: none
-    background: #fff
+    background: none
     color: $colorBlue2
     font-size: 15px
     width: 100%
@@ -62,7 +65,7 @@
       background: $colorGray1
 
   &:before
-    +arrow-down($colorGray2, 5px)
+    +arrow-down($colorBlue3, 5px)
     content: ""
     width: 0
     height: 0
