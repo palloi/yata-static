@@ -1,7 +1,7 @@
 .cs-pages-list.ui-sortable
   border: none
   border-top: 1px dotted rgba($colorWhite, .15)
-  @extend %border-full-sidebar 
+  @extend %border-full-sidebar
   margin-top: 45px
 
 
@@ -9,31 +9,30 @@
     list-style: none
     @extend %border-dotted
     @extend %border-full-sidebar
-    position: relative 
+    position: relative
 
     &:first-child .cs-pages-link:before
       content: "\e910"
-    a 
+    a
       text-decoration: none
+      color: $colorGray1
 
     .cs-pages-link
       display: block
       padding: 20px 0
-      color: $colorBlue5
 
       &:before
         content: "\e914"
         font-family: 'yata'
         margin-right: 3px
 
-      
+
       &.cs-page-hidden
-        color: #475052 
+        color: #475052
 
     [class*="cs-ico"]:not(.cs-pages-link)
-      position: absolute 
+      position: absolute
       top: 22px
-      color: $colorBlue5
 
       &:hover
         color: $colorWhite
@@ -46,4 +45,4 @@
 
 
     &:hover
-      background: #000d11
+      background: rgba($colorBlue4, 0.4)
