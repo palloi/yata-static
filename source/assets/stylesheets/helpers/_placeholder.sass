@@ -50,3 +50,9 @@
 %style-disabled
   cursor: default
   opacity: .15
+
+%animate-default
+  @include transition(background 0.25s ease-in, color 0.25s ease-in)
+
+%animate-hover
+  @include transition(background 0.25s ease-in, color 0.25s ease-in)
