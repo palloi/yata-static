@@ -159,6 +159,9 @@
     ~ [class*="cs-btn"]
       margin-left: -1px
 
+    &:focus + [class*="cs-btn"]
+      @extend %outline
+
     &:checked  + [class*="cs-btn"]
       @extend %btn-active
 

@@ -77,6 +77,9 @@ $sidebar-timing: ease-in-out
 input[id*="cs-sidebar-nav-"]
   @extend %hidden-element
 
+  &:focus + .cs-tab-label
+    @extend %outline
+
   &:checked + .cs-tab-label
     color: $colorWhite
     background: transparent
