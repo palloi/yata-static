@@ -3,6 +3,7 @@
   vertical-align: sub
 
   & :before
+    @extend %animate-default
     color: rgba($colorBlue2, 0.5)
     font-size: 20px
     margin: 0
@@ -37,6 +38,12 @@
 
     &.cs-active
       color: #fff
+
+    &:hover,
+    &:focus
+      &:before
+        @extend %animate-hover
+        color: rgba($colorBlue2, 1)
 
     span
       display: none

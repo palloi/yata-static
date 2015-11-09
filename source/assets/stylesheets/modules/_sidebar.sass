@@ -11,7 +11,6 @@ $sidebar-timing: ease-in-out
   bottom: 0
   width: $sidebarWidth
   background: $colorBase2
-  // background: $colorBlue4
   box-shadow: 1px 0 3px rgba(0,0,0,0.6)
   z-index: 2
 
@@ -31,6 +30,7 @@ $sidebar-timing: ease-in-out
     margin-bottom: 15px
 
   .cs-tab-label
+    @extend %animate-default
     color: rgba($colorWhite,0.6)
     cursor: pointer
     border-left: 1px solid $colorBlue3
@@ -43,6 +43,7 @@ $sidebar-timing: ease-in-out
     padding: 15px 0
 
     &:before
+      @extend %animate-default
       color: rgba(mix($colorWhite, $colorBlue1, 40%), .3)
       display: block
       margin-bottom: 5px
@@ -51,6 +52,14 @@ $sidebar-timing: ease-in-out
     &:first-child
       border-left: none
 
+    &:hover,
+    &:focus
+      @extend %animate-hover
+      color: $colorWhite
+
+      &:before
+        @extend %animate-hover
+        color: $colorBlue1
 
 .cs-sidebar-nav-option
   position: absolute

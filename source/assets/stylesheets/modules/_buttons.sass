@@ -1,6 +1,7 @@
 // Style base button
 [class*="cs-btn"]
   @include appearance(none)
+  @extend %animate-default
   @extend %font-smoothing
   height: $heightDefault
   cursor: pointer
@@ -44,6 +45,10 @@
 
   &.cs-active
     @extend %btn-active
+
+  &:hover,
+  &:focus
+    @extend %animate-hover
 
 
 [class*="cs-btn-"]
