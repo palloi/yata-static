@@ -28,7 +28,6 @@
 
   &.cs-custom-select-secondary
     @extend %style-dark
-    background: none
     text-align: right
 
     select
@@ -39,6 +38,12 @@
     &:before
       +arrow-down($colorWhite, 5px)
       position: absolute
+
+    &:hover
+      @extend %style-dark-hover
+
+    &:active
+      @extend %style-dark-active
 
 
   &[disabled]
