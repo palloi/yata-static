@@ -6,8 +6,8 @@
   padding: 15px 10px
   height: 85px
   margin: 0 0 10px 10px
-  border: 1px solid rgba($colorBlue1, .20)
-  background: rgba($colorBlue1, .15)
+  border: 1px solid rgba($colorBase1, .20)
+  background: $colorBlue3
   border-radius: $defaultRadius
   display: inline-block
   text-align: center
@@ -23,6 +23,9 @@
     display: block
     margin-bottom: 7px
 
-  &:hover
-    border: 1px solid rgba($colorBlue1, .40)
-    background: rgba($colorBlue1, .30)
+  &:hover:not(.cs-disabled)
+    border: 1px solid rgba($colorBase1, .40)
+    background: $colorBlue4
+
+  &.cs-disabled
+    @extend %style-disabled
