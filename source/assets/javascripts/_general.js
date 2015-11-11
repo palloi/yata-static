@@ -3,11 +3,13 @@ yata.general = (function() {
   'use strict';
 
   function init() {
-    $( "#sortable" ).sortable({
-      cancel: ".ui-state-disabled",
-      placeholder: "ui-state-highlight"
+    $( '#sortable' ).sortable({
+      cancel: '.ui-state-disabled',
+      items: 'li:not(.ui-state-disabled)',
+      placeholder: 'ui-state-highlight',
+      handle: '.cs-ico-drag',
     });
-    $( "#sortable li" ).disableSelection();
+    $( '#sortable li' ).disableSelection();
   }
 
   return {
