@@ -85,5 +85,5 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 
   # base url for gh-pages
-  set :base_url, "/yata-static"
+  set :base_url, "http://frontendlw.github.io/yata-static"
 end
