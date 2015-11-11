@@ -11,8 +11,7 @@
     @extend %border-full-sidebar
     position: relative
 
-    &:first-child .cs-pages-link:before
-      content: "\e910"
+
     a
       text-decoration: none
       color: $colorGray1
@@ -29,6 +28,9 @@
 
       &.cs-page-hidden
         color: #475052
+
+      &.cs-ico-home:before
+        content: "\e910"
 
     [class*="cs-ico"]:not(.cs-pages-link)
       position: absolute
