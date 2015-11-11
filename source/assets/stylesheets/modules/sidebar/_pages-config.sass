@@ -9,22 +9,26 @@
     list-style: none
     @extend %border-dotted
     @extend %border-full-sidebar
+    @extend %animate-default
     position: relative
 
 
     a
       text-decoration: none
       color: $colorGray1
+      padding-left: 15px
 
     .cs-pages-link
       display: block
-      padding: 20px 0
+      padding: 20px 0 20px 15px
+      padding-bottom: 20px
 
-      &:before
-        content: "\e914"
-        font-family: 'yata'
-        margin-right: 3px
+      .cs-ico-drag
+        cursor: move
 
+      .cs-ico-drag,
+      .cs-ico-home
+        left: 15px
 
       &.cs-page-hidden
         color: #475052
@@ -34,7 +38,7 @@
 
     [class*="cs-ico"]:not(.cs-pages-link)
       position: absolute
-      top: 22px
+      top: 21px
 
       &:hover,
       &.cs-active
