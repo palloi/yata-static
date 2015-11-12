@@ -53,3 +53,46 @@
 
     &:hover
       background: rgba($colorBlue4, 0.4)
+
+
+input[name="cs-sidebar-new-page"]
+  @extend input[id*="cs-sidebar-nav-"]
+
+  &:checked + .cs-sidebar-new-page
+    visibility: visible
+    opacity: 1
+    @include transform(translate(0px, 0))
+
+.cs-sidebar-new-page
+  position: absolute
+  top: 0
+  left: $sidebarWidth
+  width: 500px
+  margin: 20px
+  padding: 20px
+  border: 1px solid $colorBlack
+  background: $colorWhite
+  z-index: 1
+  opacity: 0
+  visibility: hidden
+  @include transform(translate(30px, 0))
+  @include transition(all 0.5s ease-in-out)
+
+  &:before
+    content: ""
+    @include triangle(25px, $colorBlack, left)
+    position: absolute
+    left: -13px
+    top: 130px
+
+input[id="cs-page-new-config"]
+  @extend input[id*="cs-sidebar-nav-"]
+
+  &:checked + label
+    font-weight: bold
+    
+    + .cs-page-new-config
+      display: block
+
+.cs-page-new-config
+  display: none
