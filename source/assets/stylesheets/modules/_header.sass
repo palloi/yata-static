@@ -44,9 +44,24 @@
     vertical-align: middle
     display: inline-block
 
-  .cs-group-active
+  .cs-custom-select-auto + .cs-group-btn
     margin: 0 $spaceDefault
+
+    .cs-btn:before
+      font-size: 20px
 
   .cs-dropdown
     margin-left: $spaceDefault
+
+  [class*="cs-custom-select"],
+  [class*="cs-btn"]
+    height: $heightBig
+
+  [class*="cs-btn"]
+    padding: 9px 20px
+
+    &:before:empty
+      padding: 9px
+
+
 

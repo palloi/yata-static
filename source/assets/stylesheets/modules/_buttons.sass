@@ -6,7 +6,7 @@
   height: $heightDefault
   cursor: pointer
   border: none
-  padding: 9px 14px
+  padding: 5px 14px
   border-radius: $radiusDefault
   background: #fff
   display: inline-block
@@ -20,14 +20,13 @@
   font-weight: normal
 
   &[class*="cs-ico-"]:before
-    font-size: 16px
+    font-size: 14px
     color: $colorBlue2
     position: relative
-    top: 2px
 
-  &[class*="cs-ico-"]:empty:before
-    font-size: 22px
-    top: 0
+  // &[class*="cs-ico-"]:empty:before
+  //   font-size: 22px
+  //   top: 0
 
 
   &[class*="cs-ico-"]:empty:before
@@ -71,7 +70,9 @@
 .cs-btn-center
   display: block
   margin: 10px auto
-  width: 185px
+  padding: 9px 14px
+  height: $heightBig
+  width: 200px
 
 // Primary button
 .cs-btn-primary
@@ -85,6 +86,9 @@
   &:focus
     background: $colorBlue1
 
+  &[class*="cs-ico-"]:before
+    color: $colorWhite
+
 // Secondary button
 .cs-btn-secondary
   background: $colorBlue5
@@ -96,12 +100,18 @@
   &:focus
     background: $colorBlue2
 
+  &[class*="cs-ico-"]:before
+    color: $colorWhite
+
 .cs-btn-danger
   color: $colorDanger
 
   &:hover,
   &:focus
     @extend %btn-hover
+
+  &[class*="cs-ico-"]:before
+    color: $colorDanger
 
 // Confirm button
 .cs-btn-confirm
@@ -110,21 +120,6 @@
   &:hover,
   &:focus
     background: darken($colorDanger, 25%)
-
-
-//
-// Sizes of BTN
-//
-.cs-btn-lg
-  font-size: 16px
-  padding: 13px 30px
-  height: $heightDefault + 10
-
-.cs-btn-xs
-  height: $heightDefault - 10
-  font-size: 13px
-  padding: 4px 10px
-  line-height: 1.5
 
 
 // BTN Groups
