@@ -1,0 +1,78 @@
+input.cs-check-toggle
+  @extend input[id*="cs-sidebar-nav-"]
+
+  + label
+    cursor: pointer
+    border: 1px solid lighten($colorBlack, 20)
+    &:before,
+    &:after
+      display: inline-block
+      border: 2px solid transparent
+
+    &:before
+      content: "Sim"
+
+    &:after
+      content: "Não"
+      border-color: $colorBlack
+      
+
+  &:checked
+    + label
+      &:before
+        border-color: $colorBlack
+
+      &:after
+        border-color: transparent
+
+
+.cs-field
+  display: inline-block
+  vertical-align: super
+  height: $heightDefault
+  margin-right: 8px
+  border: 1px solid $colorGray1
+
+.cs-fieldset
+  padding: $spaceDefault 0
+
+.cs-label
+  margin-bottom: 15px
+  display: block
+
+
+//prefix and sufix
+
+.cs-prefix-group
+  display: flex 
+
+  .cs-prefix,
+  .cs-field
+    border: 1px solid $colorGray1
+
+  .cs-field
+    flex: 1
+    margin: 0
+
+    &:not(:last-child)
+      border-right: 0
+
+    &:not(:first-child)
+      border-left: 0
+
+  .cs-field:last-child, 
+  .cs-prefix:last-child
+    border-radius: 0 $radiusDefault $radiusDefault 0
+
+  .cs-field:first-child, 
+  .cs-prefix:first-child
+    border-radius: $radiusDefault 0 0 $radiusDefault
+  
+  .cs-prefix
+    background-color: $colorGray2
+    color: #666
+    font: inherit
+    height: $heightDefault
+    line-height: $heightDefault
+    padding: 0 10px
+    font-weight: 400
