@@ -64,26 +64,41 @@ input[name="cs-sidebar-new-page"]
     @include transform(translate(0px, 0))
 
 .cs-sidebar-new-page
+  @extend %box-generic
   position: absolute
   top: 0
   left: $sidebarWidth
   width: 500px
   margin: 20px
-  padding: 20px
-  border: 1px solid $colorBlack
-  background: $colorWhite
   z-index: 1
   opacity: 0
   visibility: hidden
   @include transform(translate(30px, 0))
   @include transition(all 0.5s ease-in-out)
 
-  &:before
+  &:before,
+  &:after
     content: ""
-    @include triangle(25px, $colorBlack, left)
     position: absolute
-    left: -13px
-    top: 130px
+
+  &:before
+    @include triangle(18px, $colorWhite, left)
+    left: -7px
+    top: 129px
+    z-index: 2
+
+  &:after
+    @include triangle(19px, $colorGray1, left)
+    left: -9px
+    top: 129px
+    z-index: 1
+
+.cs-sidebar-footer
+  background: $colorGray2
+  border-radius: 0 0 $radiusDefault
+  margin: 0 -20px -20px
+  padding: 30px 20px
+  border-top: 1px solid $colorGray1
 
 input[id="cs-page-new-config"]
   @extend input[id*="cs-sidebar-nav-"]
