@@ -29,17 +29,36 @@ input.cs-check-toggle
 .cs-field
   display: inline-block
   vertical-align: super
-  height: $heightDefault
+  border-radius: $radiusDefault
+  height: $heightDefault 
+  padding: 6px 15px
+  font-size: 14px
+  color: $colorBlue2
   margin-right: 8px
   border: 1px solid $colorGray1
+  width: 100%
 
 .cs-fieldset
   padding: $spaceDefault 0
 
-.cs-label
-  margin-bottom: 15px
+.cs-text-label
+  color: $colorGray3
   display: block
+  font-size: 14px
+  margin-bottom: 3px
 
+[class*="cs-label"]
+  margin-bottom: 25px
+  display: inline-block
+  vertical-align: top
+  
+
+  .cs-sidebar-nav-appearance &
+    vertical-align: middle
+    margin-bottom: 15px
+
+  &.cs-label-block
+    display: block
 
 //prefix and sufix
 
@@ -60,19 +79,23 @@ input.cs-check-toggle
     &:not(:first-child)
       border-left: 0
 
-  .cs-field:last-child, 
-  .cs-prefix:last-child
-    border-radius: 0 $radiusDefault $radiusDefault 0
-
   .cs-field:first-child, 
   .cs-prefix:first-child
     border-radius: $radiusDefault 0 0 $radiusDefault
   
   .cs-prefix
     background-color: $colorGray2
-    color: #666
+    color: rgba($colorGray3,.3)
     font: inherit
     height: $heightDefault
     line-height: $heightDefault
     padding: 0 10px
     font-weight: 400
+
+    + .cs-field
+      border-radius: 0
+
+  .cs-field:last-child, 
+  .cs-prefix:last-child
+    border-radius: 0 $radiusDefault $radiusDefault 0
+
