@@ -1,0 +1,132 @@
+[class*="cs-tooltip"]
+  position: relative
+  text-decoration: none
+
+  &:after,
+  &:before
+    position: absolute
+    z-index: 12
+    opacity: 0
+    +scale(.1)
+
+  &:after
+    content: attr(aria-label)
+    min-height: 25px
+    line-height: 1.4
+    padding: 8px 10px
+    font-size: 11px
+    font-family: Open Sans,Arial,Helvetica,Sans-serif
+    font-weight: 400
+    color: #fff
+    background: $brown
+    border-radius: 4px
+    text-shadow: 0 0 5px #000
+    max-width: 300px
+    min-width: 180px
+
+  &:before
+    content: ""
+    width: 0
+    height: 0
+    border-width: 4px
+    border-style: solid
+
+  &:hover:after,
+  &:focus:after,
+  &:hover:before,
+  &:focus:before
+    +transition(opacity, .25s, ease-in-out)
+    +transition(transform, .15s, ease-in-out)
+    opacity: 1
+    +scale(1)
+    +transform-origin(0)
+
+/* Top */
+
+.cs-tooltip-top
+  &:after,
+  &:before
+    margin-bottom: 8px
+
+  &:before
+    border-color: $brown transparent transparent transparent
+    margin-bottom: 0
+
+  &:hover:after,
+  &:focus:after,
+  &:focus:after,
+  &:hover:before,
+  &:focus:before,
+  &:focus:before
+    bottom: 90%
+    left: 0
+    +scale(1)
+
+  &:hover:before,
+  &:focus:before
+    left: 9px
+
+/* Bottom */
+.cs-tooltip-bottom
+  &:after,
+  &:before
+    margin-top: 12px
+
+  &:before
+    border-color: transparent transparent $brown transparent
+    margin-top: 0
+
+  &:hover:after,
+  &:focus:after,
+  &:hover:before,
+  &:focus:before
+    top: 90%
+    left: 0
+
+  &:hover:before,
+  &:focus:before
+    left: 9px
+    margin-top: 4px
+
+/* Right */
+.cs-tooltip-right
+  &:after,
+  &:before
+    margin-left: 8px
+
+  &:before
+    border-color: transparent $brown transparent transparent
+    margin-left: 0
+
+  &:hover:after,
+  &:focus:after,
+  &:hover:before,
+  &:focus:before
+    left: 75%
+    top: 0
+
+  &:hover:before,
+  &:focus:before
+    top: 7px
+
+/* Left */
+.cs-tooltip-left
+  &:after,
+  &:before
+    margin-right: 8px
+
+  &:before
+    border-color: transparent transparent transparent $brown
+    margin-right: 0
+
+  &:hover:after,
+  &:focus:after,
+  &:hover:before,
+  &:focus:before
+    right: 75%
+    top: 0
+
+  &:hover:before,
+  &:focus:before
+    top: 7px
+
