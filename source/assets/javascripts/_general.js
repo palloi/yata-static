@@ -5,6 +5,7 @@ yata.general = (function() {
   function init() {
     dragDropMenu();
     toggleLabelPopover();
+    linkPreventDefault();
   }
 
 
@@ -28,6 +29,15 @@ yata.general = (function() {
     });
     $( '#sortable li' ).disableSelection();
   }
+
+
+  function linkPreventDefault(){
+      $("a").on("click", function(e){
+        if($(this).attr("href") === "" || $(this).attr("href") === "#"){
+          e.preventDefault();
+        }
+      })
+    },
 
   return {
     init: init
