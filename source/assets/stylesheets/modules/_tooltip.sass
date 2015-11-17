@@ -7,7 +7,7 @@
     position: absolute
     z-index: 12
     opacity: 0
-    +scale(.1)
+    @include transform(scale(.1))
 
   &:after
     content: attr(aria-label)
@@ -17,12 +17,12 @@
     font-size: 11px
     font-family: Open Sans,Arial,Helvetica,Sans-serif
     font-weight: 400
-    color: #fff
-    background: $brown
-    border-radius: 4px
+    color: $colorGray1
+    background: $colorBlack
+    border-radius: $radiusDefault
     text-shadow: 0 0 5px #000
     max-width: 300px
-    min-width: 180px
+    min-width: 140px
 
   &:before
     content: ""
@@ -35,11 +35,10 @@
   &:focus:after,
   &:hover:before,
   &:focus:before
-    +transition(opacity, .25s, ease-in-out)
-    +transition(transform, .15s, ease-in-out)
+    @include transition(opacity, .25s, ease-in-out, transform, .15s, ease-in-out)
     opacity: 1
-    +scale(1)
-    +transform-origin(0)
+    @include transform(scale(1))
+    @include transform-origin(0)
 
 /* Top */
 
@@ -49,7 +48,7 @@
     margin-bottom: 8px
 
   &:before
-    border-color: $brown transparent transparent transparent
+    border-color: $colorBlack transparent transparent transparent
     margin-bottom: 0
 
   &:hover:after,
@@ -60,7 +59,7 @@
   &:focus:before
     bottom: 90%
     left: 0
-    +scale(1)
+    @include transform(scale(1))
 
   &:hover:before,
   &:focus:before
@@ -73,7 +72,7 @@
     margin-top: 12px
 
   &:before
-    border-color: transparent transparent $brown transparent
+    border-color: transparent transparent $colorBlack transparent
     margin-top: 0
 
   &:hover:after,
@@ -95,7 +94,7 @@
     margin-left: 8px
 
   &:before
-    border-color: transparent $brown transparent transparent
+    border-color: transparent $colorBlack transparent transparent
     margin-left: 0
 
   &:hover:after,
@@ -116,7 +115,7 @@
     margin-right: 8px
 
   &:before
-    border-color: transparent transparent transparent $brown
+    border-color: transparent transparent transparent $colorBlack
     margin-right: 0
 
   &:hover:after,
