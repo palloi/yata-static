@@ -6,6 +6,7 @@ yata.general = (function() {
     dragDropMenu();
     toggleLabelPopover();
     linkPreventDefault();
+    createTitlePage();
   }
 
 
@@ -37,6 +38,15 @@ yata.general = (function() {
         e.preventDefault();
       }
     })
+  }
+
+  function createTitlePage(){
+    var $field = $('#title-page');
+
+    $field.on('keyup', function(){
+      $('#url-page').val($(this).val());
+    });
+    
   }
 
   return {
