@@ -32,12 +32,12 @@ yata.general = (function() {
 
 
   function linkPreventDefault(){
-      $("a").on("click", function(e){
-        if($(this).attr("href") === "" || $(this).attr("href") === "#"){
-          e.preventDefault();
-        }
-      })
-    },
+    $('a').on('click', function(e){
+      if($(this).attr('href') === '' || $(this).attr('href') === '#'){
+        e.preventDefault();
+      }
+    })
+  }
 
   return {
     init: init
