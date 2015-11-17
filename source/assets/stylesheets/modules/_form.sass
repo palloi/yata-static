@@ -63,14 +63,14 @@ input.cs-check-toggle
 //prefix and sufix
 
 .cs-prefix-group
-  display: flex 
+  @include display(flex)
 
   .cs-prefix,
   .cs-field
     border: 1px solid $colorGray1
 
   .cs-field
-    flex: 1
+    @include flex(1)
     margin: 0
 
     &:not(:last-child)
@@ -98,4 +98,7 @@ input.cs-check-toggle
   .cs-field:last-child, 
   .cs-prefix:last-child
     border-radius: 0 $radiusDefault $radiusDefault 0
+
+  .cs-prefix:last-child
+    margin-left: -1px
 
