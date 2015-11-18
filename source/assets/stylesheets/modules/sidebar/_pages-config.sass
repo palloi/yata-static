@@ -70,6 +70,7 @@ input[name="cs-sidebar-new-page"]
   left: $sidebarWidth - 50
   width: 400px
   margin: 20px
+  padding-bottom: 0
   z-index: 1
   opacity: 0
   visibility: hidden
@@ -104,7 +105,7 @@ input[name="cs-sidebar-new-page"]
     .cs-label:last-child
       float: right
 
-  p 
+  p
     color: $colorGray3
     margin-bottom: 5px
 
@@ -114,19 +115,13 @@ input[name="cs-sidebar-new-page"]
     background: url(../images/ico-face.png) no-repeat
     padding-left: 27px
 
-.cs-sidebar-footer
-  background: $colorGray2
-  border-radius: 0 0 $radiusDefault $radiusDefault
-  margin: 0 -20px -20px
-  padding: 30px 20px
-  border-top: 1px solid $colorGray1
 
 input[id="cs-page-new-config"]
   @extend input[id*="cs-sidebar-nav-"]
 
   &:checked + label
     font-weight: bold
-    
+
     + .cs-page-new-config
       display: block
 
