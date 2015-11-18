@@ -659,6 +659,7 @@ Caso tenha mais de uma palavra, separe por hífens. Por exemplo: quem-somos">
             <option>Selecione</option>
             <option>Produtos</option>
             <option>Contato</option>
+            <option>Links úteis</option>
           </select>
         </div>
       </label>
@@ -691,37 +692,69 @@ Caso tenha mais de uma palavra, separe por hífens. Por exemplo: quem-somos">
 
   <div id="ember653" class="ember-view"><input type="checkbox" name="cs-sidebar-new-page" id="cs-sidebar-new-link" data-ember-action="654">
 	<div class="cs-sidebar-new-page">
-	  <div class="input cs-inline-block">
-	    <label class="cs-block" for="cs-page-new-link-title">Título da página</label>
-	    <input type="text" id="cs-page-new-link-title">
-	  </div>
+    <h2 class="cs-sidebar-title">Adicionar link externo</h2>
+    <p>Lorem ipsum dolor sit amet</p>
 
-	  <div class="checkbox cs-float-r">
+	  <div class="cs-fieldset">
+
+      <div class="cs-field-inline">
+        <label class="cs-label">
+          <b class="cs-text-label">Título do link externo</b>
+          <input type="text" id="title-page" class="cs-field" placeholder="Dica: max: 70 caracteres">
+        </label>
+
+        <label class="cs-label">
+          <b class="cs-text-label">Exibir no menu?</b>
+         <div class="cs-group-btn cs-group-active">
+            <input type="radio" id="radio1" checked name="radioLink">
+            <label for="radio1" class="cs-btn">Sim</label>
+            <input type="radio" id="radio2"  name="radioLink">
+            <label for="radio2" class="cs-btn">Não</label>
+          </div>
+        </label>
+      </div>
+
+
+
+	  <!-- <div class="checkbox cs-float-r">
 	    <label class="cs-block" for="cs-page-new-link-show">Exibir no menu?</label>
 	    <input type="checkbox" class="cs-check-toggle" checked="checked" id="cs-page-new-link-show">
 	    <label for="cs-page-new-show"></label>
-	  </div>
+	  </div> -->
 
-	  <div class="textarea">
-	    <label class="cs-block" for="cs-page-new-link-description">Descrição da página para Google</label>
-	    <textarea cols="72" rows="5" id="cs-page-new-link-description"></textarea>
-	  </div>
+	   <label class="cs-label-block">
+        <b class="cs-text-label">Insira o endereço do link externo (URL)
+          <a href="#" class="cs-tooltip-top" aria-label="O Google reconhece este endereço, por isso evite alterar com frequência.
+  Caso tenha mais de uma palavra, separe por hífens. Por exemplo: quem-somos">
+          <span class="cs-help-info"></span>
+          </a>
+        </b>
+        <div class="cs-prefix-group">
+          <span class="cs-prefix">http://</span>
+          <input class="cs-field" id="url-page">
+        </div>
+      </label>
 
-	  <div class="select">
-	    <label for="cs-page-new-link-parent">Inserir abaixo de</label>
-	    <select id="cs-page-new-link-parent">
-	      <option>Selecione</option>
-	      <option>Sobre</option>
-	      <option>Contato</option>
-	    </select>
-	  </div>
+      <label class="cs-label-block">
+        <b class="cs-text-label">Inserir abaixo de:</b>
+        <div class="cs-custom-select">
+          <select id="cs-page-new-page-parent">
+            <option>Selecione</option>
+            <option>Produtos</option>
+            <option>Contato</option>
+            <option>Links úteis</option>
+          </select>
+        </div>
+      </label>
 
-	  <hr>
-
-	  <button data-ember-action="655">Criar página</button>
-	  <label class="cs-float-r" for="cs-sidebar-new-link">Cancelar</label>
-	</div>
+    </div>
+    <footer class="cs-sidebar-footer">
+      <label class="cs-btn-primary" id="cancel-add-page" for="cs-sidebar-new-link">Adicionar</label>
+      <label class="cs-btn" id="cancel-add-page" for="cs-sidebar-new-link">Cancelar</label>
+    </footer>
+  </div>
 </div>
+
 </sidebar>
 
 
