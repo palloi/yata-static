@@ -61,7 +61,7 @@ yata.general = (function() {
     setTimeout(function(){
       $('.cssload-loader').removeClass('show');
       $('.image-empty').addClass('show');
-    },2000)
+    },3000)
   }
 
 
