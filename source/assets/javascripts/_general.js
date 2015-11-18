@@ -7,6 +7,7 @@ yata.general = (function() {
     toggleLabelPopover();
     linkPreventDefault();
     createTitlePage();
+    loadingPage();
   }
 
 
@@ -46,8 +47,15 @@ yata.general = (function() {
     $field.on('keyup', function(){
       $('#url-page').val($(this).val());
     });
-    
+
   }
+
+  function loadingPage(){
+    $('.image-fake').addClass('hide');
+    $('.image-empty').addClass('show');
+  }
+
+
 
   return {
     init: init
