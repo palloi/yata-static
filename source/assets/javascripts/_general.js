@@ -8,6 +8,7 @@ yata.general = (function() {
     linkPreventDefault();
     createTitlePage();
     confirmNewPage();
+    cancelNewPage();
   }
 
 
@@ -50,6 +51,10 @@ yata.general = (function() {
 
   }
 
+  function clearFields(){
+    $('#url-page, #title-page').val("");
+  }
+
   function loadingPage(){
     $('.image-fake').addClass('hide');
     $('.cssload-loader').addClass('show');
@@ -60,10 +65,19 @@ yata.general = (function() {
   }
 
 
+
+
   function confirmNewPage(){
     $('#confirm-add-page').on('click', function(){
       $('#add-page').trigger('click');
       loadingPage();
+      clearFields();
+    });
+  }
+
+  function cancelNewPage(){
+    $('#cancel-add-page').on('click', function(){
+      clearFields();
     });
   }
 
