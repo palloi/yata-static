@@ -7,7 +7,7 @@ yata.general = (function() {
     toggleLabelPopover();
     linkPreventDefault();
     createTitlePage();
-    loadingPage();
+    confirmNewPage();
   }
 
 
@@ -52,10 +52,20 @@ yata.general = (function() {
 
   function loadingPage(){
     $('.image-fake').addClass('hide');
-    $('.image-empty').addClass('show');
+    $('.cssload-loader').addClass('show');
+    setTimeout(function(){
+      $('.cssload-loader').removeClass('show');
+      $('.image-empty').addClass('show');
+    },2000)
   }
 
 
+  function confirmNewPage(){
+    $('#confirm-add-page').on('click', function(){
+      $('#add-page').trigger('click');
+      loadingPage();
+    });
+  }
 
   return {
     init: init
