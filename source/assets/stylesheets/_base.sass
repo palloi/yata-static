@@ -4,6 +4,7 @@ html
 body
   height: 100%
   font-family: 'Open Sans', verdana, arial, sans-serif
+  overflow: hidden
 
 .cs-main
   position: absolute
@@ -115,21 +116,19 @@ body
 .image-fake
   z-index: 1
   opacity: 1
+  position: relative
 
-  &.hide 
-    opacity: 0
-    position: absolute
+  &.hide
+    display: none
 
 .image-fake,
 .image-empty
   text-align: center
-  position: relative
+
 
 .image-empty
-  opacity: 0
-  z-index: 1
+  display: none
 
   &.show
-    opacity: 1
-    z-index: 3
+    display: block
 
