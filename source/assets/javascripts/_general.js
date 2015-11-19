@@ -10,6 +10,7 @@ yata.general = (function() {
     confirmNewPage();
     cancelNewPage();
     openEditPage();
+    showBoxPages();
   }
 
 
@@ -83,9 +84,24 @@ yata.general = (function() {
   }
 
   function openEditPage(){
-    $('.cs-ico-config').on('click', function(){
+    $('.cs-ico-config').on('click', function(e){
       $('#cs-sidebar-edit-page').click();
+      if($('#cs-sidebar-edit-page').is(':checked')){
+        positionArrow(this);
+      }
     });
+  }
+
+
+  function positionArrow(elem){
+    var posY = $(elem).offset().top - 100;
+    $('.cs-sidebar-new-page .cs-sidebar-arrow').css({ top: posY });
+  }
+
+  function showBoxPages(){
+    $('.cs-sidebar-nav-pages > label').on('click', function(){
+      positionArrow(this);
+    })
   }
 
   return {
