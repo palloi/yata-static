@@ -85,6 +85,7 @@ yata.general = (function() {
 
   function openEditPage(){
     $('.cs-ico-config').on('click', function(e){
+      checkedBoxPages();
       $('#cs-sidebar-edit-page').click();
       if($('#cs-sidebar-edit-page').is(':checked')){
         positionArrow(this);
@@ -100,8 +101,15 @@ yata.general = (function() {
 
   function showBoxPages(){
     $('.cs-sidebar-nav-pages > label').on('click', function(){
+      checkedBoxPages();
       positionArrow(this);
     })
+  }
+
+  function checkedBoxPages(){
+    if($('[name="cs-sidebar-new-page"]').is(':checked')){
+      $('[name="cs-sidebar-new-page"]').click();
+    }
   }
 
   return {
