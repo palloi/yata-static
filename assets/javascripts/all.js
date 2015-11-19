@@ -9,6 +9,8 @@ yata.general = (function() {
     createTitlePage();
     confirmNewPage();
     cancelNewPage();
+    openEditPage();
+    showBoxPages();
   }
 
 
@@ -79,6 +81,28 @@ yata.general = (function() {
     $('#cancel-add-page').on('click', function(){
       clearFields();
     });
+  }
+
+  function openEditPage(){
+    $('.cs-ico-config').on('click', function(e){
+      $('.cs-sidebar-nav-pages > label').click();
+      $('#cs-sidebar-edit-page').click();
+      if($('#cs-sidebar-edit-page').is(':checked')){
+        positionArrow(this);
+      }
+    });
+  }
+
+
+  function positionArrow(elem){
+    var posY = $(elem).offset().top - 100;
+    $('.cs-sidebar-new-page .cs-sidebar-arrow').css({ top: posY });
+  }
+
+  function showBoxPages(){
+    $('.cs-sidebar-nav-pages > label').on('click', function(){
+      positionArrow(this);
+    })
   }
 
   return {
