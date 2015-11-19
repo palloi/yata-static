@@ -85,7 +85,6 @@ yata.general = (function() {
 
   function openEditPage(){
     $('.cs-ico-config').on('click', function(e){
-      $('.cs-sidebar-nav-pages > label').click();
       $('#cs-sidebar-edit-page').click();
       if($('#cs-sidebar-edit-page').is(':checked')){
         positionArrow(this);
