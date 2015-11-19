@@ -85,10 +85,12 @@ yata.general = (function() {
 
   function openEditPage(){
     $('.cs-ico-config').on('click', function(e){
-      checkedBoxPages();
       $('#cs-sidebar-edit-page').click();
       if($('#cs-sidebar-edit-page').is(':checked')){
         positionArrow(this);
+      }
+      if($('#cs-sidebar-new-page, #cs-sidebar-new-link').is(':checked')){
+        $('#cs-sidebar-new-page, #cs-sidebar-new-link').removeAttr('checked');
       }
     });
   }
@@ -101,15 +103,11 @@ yata.general = (function() {
 
   function showBoxPages(){
     $('.cs-sidebar-nav-pages > label').on('click', function(){
-      checkedBoxPages();
       positionArrow(this);
+      if($('#cs-sidebar-edit-page').is(':checked')){
+        $('#cs-sidebar-edit-page').removeAttr('checked');
+      }
     })
-  }
-
-  function checkedBoxPages(){
-    if($('[name="cs-sidebar-new-page"]').is(':checked')){
-      $('[name="cs-sidebar-new-page"]').click();
-    }
   }
 
   return {
