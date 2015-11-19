@@ -9,6 +9,7 @@ yata.general = (function() {
     createTitlePage();
     confirmNewPage();
     cancelNewPage();
+    openEditPage();
   }
 
 
@@ -78,6 +79,12 @@ yata.general = (function() {
   function cancelNewPage(){
     $('#cancel-add-page').on('click', function(){
       clearFields();
+    });
+  }
+
+  function openEditPage(){
+    $('.cs-ico-config').on('click', function(){
+      $('#cs-sidebar-edit-page').click();
     });
   }
 
