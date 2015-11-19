@@ -77,22 +77,24 @@ input[name="cs-sidebar-new-page"]
   @include transform(translate(30px, 0))
   @include transition(all 0.5s ease-in-out)
 
-  &:before,
-  &:after
-    content: ""
-    position: absolute
+  .cs-sidebar-arrow
 
-  &:before
-    @include triangle(18px, $colorWhite, left)
-    left: -7px
-    top: 129px
-    z-index: 2
+    &:before,
+    &:after
+      content: ""
+      position: absolute
 
-  &:after
-    @include triangle(19px, $colorGray1, left)
-    left: -9px
-    top: 129px
-    z-index: 1
+    &:before
+      @include triangle(18px, $colorWhite, left)
+      left: -7px
+      top: 129px
+      z-index: 2
+
+    &:after
+      @include triangle(19px, $colorGray1, left)
+      left: -9px
+      top: 129px
+      z-index: 1
 
   textarea
     height: 85px
@@ -115,6 +117,12 @@ input[name="cs-sidebar-new-page"]
     background: url(../images/ico-face.png) no-repeat
     padding-left: 27px
 
+    ~ .cs-link
+      float: right
+
+    ~ .cs-ico-check
+      color: $colorBlue1
+
 
 input[id="cs-page-new-config"]
   @extend input[id*="cs-sidebar-nav-"]
@@ -127,3 +135,6 @@ input[id="cs-page-new-config"]
 
 .cs-page-new-config
   display: none
+
+
+.cs-link
